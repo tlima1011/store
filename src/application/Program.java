@@ -19,22 +19,19 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in); 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-		//Order order = new Order(); 
 		
 		System.out.println("Enter cliente data:"); 
-		System.out.print("Name: ");//Alex Green
+		System.out.print("Name: "); //Alex Green
 		String name = sc.nextLine(); 
-		System.out.print("Email: ");  //alex@gmail.com
+		System.out.print("Email: "); //alex@gmail.com
 		String email = sc.nextLine(); 
 		System.out.print("Birth date (DD/MM/YYYY): "); //15/03/1985
 		Date data = sdf.parse(sc.next());
 		Client client = new Client(name, email, data); 
-		//System.out.println(client);
 		System.out.println("Enter order data:"); 
 		sc.nextLine();
 		System.out.print("Status: "); //PROCESSING
-		String status = sc.nextLine(); 
-		OrderStatus os = OrderStatus.valueOf(status);
+		OrderStatus os = OrderStatus.valueOf(sc.next()); 
 		Order order = new Order(os, client); 
 		System.out.print("How many items to this order?  ");//2
 		int n = sc.nextInt(); 
@@ -56,5 +53,4 @@ public class Program {
 		System.out.println();
 		sc.close();
 	}
-
 }
