@@ -22,6 +22,8 @@ public class Order {
 	public Order(OrderStatus status, Client client) {
 		this.status = status;
 		this.client = client; 
+		Date novaData = new Date();
+		this.moment = novaData;
 	}
 	
 	public Order(Product product) {
@@ -79,8 +81,6 @@ public class Order {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder(); 
-		Date novaData = new Date();
-		this.moment = novaData; 
 		sb.append("ORDER SUMMARY:\n"); 
 		sb.append("Order Moment: " +sdf.format(moment) + "\n");
 		sb.append("Order status: " +this.status+"\n");
